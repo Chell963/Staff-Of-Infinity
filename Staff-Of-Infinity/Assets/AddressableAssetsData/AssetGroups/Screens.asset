@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Screens
+  m_EditorClassIdentifier: 
+  m_GroupName: Screens
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 93e34e132fed5f942885ec23fdaf5bc7
+  m_SerializeEntries:
+  - m_GUID: d7dd1f86eda7a074fbd1f01791afe58d
+    m_Address: Assets/Prefabs/Screens/MenuEntry.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - screen
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b064a10f34933444c9b7721ccb47b303
+    m_Address: Assets/Prefabs/Screens/GameplayCore.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - screen
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: de71216c9e80c2c4db7131bf20b8602a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7cc757da472af9f4daa6256dce7a88eb, type: 2}
+    - {fileID: 11400000, guid: 779f0ad4f001c104392d2743c34dbdcb, type: 2}

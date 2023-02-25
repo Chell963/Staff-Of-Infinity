@@ -29,6 +29,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - screen
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55177f4cbdea0ab41872709ceaba235a
+    m_Address: Assets/Prefabs/Screens/MenuLevelSelection.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - screen
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: de71216c9e80c2c4db7131bf20b8602a, type: 2}
   m_SchemaSet:

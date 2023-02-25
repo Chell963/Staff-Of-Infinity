@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CurrentCamera>k__BackingField: {fileID: 519420031}
-  interpolationSpeed: 5
+  interpolationSpeed: 2
   cameraOffset: {x: 0, y: 0, z: -10}
 --- !u!1 &1313311400
 GameObject:

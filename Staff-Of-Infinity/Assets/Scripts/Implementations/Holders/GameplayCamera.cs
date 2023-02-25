@@ -6,9 +6,9 @@ namespace Implementations.Holders
     public class GameplayCamera : CameraHolder
     {
         [SerializeField] private float   interpolationSpeed;
-        [SerializeField] private Vector3 cameraOffset = new Vector3(0,0,-10);
+        [SerializeField] private Vector3 cameraOffset;
 
-        private Vector3 _playerPosition;
+        private Vector3 _playerPosition = new Vector3(0, 0, -10);
 
         private LevelView _currentLevel;
         private StaffView _currentPlayer;
@@ -37,7 +37,7 @@ namespace Implementations.Holders
                     Mathf.Clamp(position.y, -verticalBounds.down, verticalBounds.up), 
                     position.z
                 );
-            transform.position = position;
+            gameObject.transform.position = position;
         }
     }
 }

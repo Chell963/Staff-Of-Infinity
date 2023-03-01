@@ -2429,7 +2429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2407f2d2ec42906408a147355a25e05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BasicModel>k__BackingField: {fileID: 11400000, guid: bed29e40e560b0e4f9883d89111dedd7, type: 2}
+  <BasicModelReference>k__BackingField: {fileID: 11400000, guid: bed29e40e560b0e4f9883d89111dedd7, type: 2}
   entityParent: {fileID: 3286201815015704120}
   <HorizontalBounds>k__BackingField:
     left: 0
@@ -4523,7 +4523,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7337262988210844286, guid: 395b168142c283c498780c8c8061755d, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 395b168142c283c498780c8c8061755d, type: 3}
 --- !u!4 &2884446676883288125 stripped

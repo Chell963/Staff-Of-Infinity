@@ -1,24 +1,27 @@
 using System;
+using Interfaces;
 
 namespace Abstractions
 {
     [Serializable]
-    public abstract class BasicViewModel
+    public abstract class BasicViewModel : IDestruction
     {
         protected BasicView  BasicView;
         protected BasicModel BasicModel;
 
         public virtual BasicViewModel BindViewModel()
         {
-            BasicView.BindView(BasicModel);
-            BasicModel.BindModel(BasicView);
             return this;
         }
-
+        
+        public virtual void Destruct() { }
+        
         protected BasicViewModel(BasicView basicView, BasicModel basicModel)
         {
             BasicView = basicView;
             BasicModel = basicModel;
         }
+
+        
     }
 }

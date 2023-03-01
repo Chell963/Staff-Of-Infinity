@@ -15,12 +15,12 @@ namespace Implementations.Screens
 
         [SerializeField] private Button button;
 
-        private LevelController localLevelController;
+        private LevelController _localLevelController;
 
         public override void InjectControllers(params Controller[] controllersToInject)
         {
             base.InjectControllers(controllersToInject);
-            localLevelController
+            _localLevelController
                 = (LevelController)controllersToInject.ToList().Find(controller => controller is LevelController);
         }
 
@@ -35,7 +35,7 @@ namespace Implementations.Screens
         private async void SwitchToGameplayCore(int levelIndex)
         {
             await Switch(ScreenType.GameplayCore);
-            localLevelController.OpenLevel(levelIndex);
+            _localLevelController.OpenLevel(levelIndex);
         }
     }
 }

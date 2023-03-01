@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: StaffModel_1
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 1
-  <Health>k__BackingField: 0
-  <MaxSpeed>k__BackingField: 3
-  <Acceleration>k__BackingField: 0.02
+  <ModelAbilities>k__BackingField:
+  - {fileID: 7796554797715125553, guid: 7cfa51758fbbe454182fca3d070d6e36, type: 3}
   <StaffName>k__BackingField: Staff Of Infinity
   <StaffSprite>k__BackingField: {fileID: 21300000, guid: 5897d7076ce7c3a47a16092be8d7cfa1, type: 3}

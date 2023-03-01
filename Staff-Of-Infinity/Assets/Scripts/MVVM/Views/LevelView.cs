@@ -3,9 +3,10 @@ using System.Linq;
 using Abstractions;
 using Data;
 using Implementations.Controllers;
-using Interfaces;
 using MVVM.Models;
-using MVVM.ViewModels;
+using MVVM.Models.Entities;
+using MVVM.ViewModels.Entities;
+using MVVM.Views.Entities;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,14 +15,16 @@ namespace MVVM.Views
     public class LevelView : BasicView
     {
         public event Action OnLevelCompleted;
-        public int LevelId => BasicModel.Id;
-        public LevelModel LevelModel => (LevelModel)BasicModel;
+        public int LevelId => BasicModelReference.Id;
+        public LevelModel LevelModel => (LevelModel)BasicModelReference;
 
         [SerializeField] private GameObject entityParent;
         [field: SerializeField] public HorizontalBounds HorizontalBounds { get; private set; }
         [field: SerializeField] public VerticalBounds VerticalBounds { get; private set; }
 
         private EntityController _localEntityController;
+
+        private PlayerView _currentPlayer;
         
         public override void InjectControllers(params Controller[] controllersToInject)
         {
@@ -33,13 +36,15 @@ namespace MVVM.Views
         {
             foreach (Transform child in entityParent.transform)
             {
-                if (child.gameObject.TryGetComponent<StaffView>(component: out var staffView))
+                if (child.gameObject.TryGetComponent<PlayerView>(out var staffView))
                 {
-                    var staffModel = Instantiate(staffView.StaffModel);
+                    _currentPlayer = staffView;
+                    var staffModel = Instantiate(_currentPlayer.PlayerModelReference);
+                    Debug.Log(staffModel.StaffName);
                     var entityStaffViewModel 
-                        = new StaffViewModel(staffView, staffModel).BindViewModel();
-                    _localEntityController.player = (StaffViewModel)entityStaffViewModel;
-                    staffView.Initialize();
+                        = new PlayerViewModel(_currentPlayer, staffModel).BindViewModel();
+                    _localEntityController.player = (PlayerViewModel)entityStaffViewModel;
+                    _currentPlayer.Initialize();
                     staffModel.Initialize();
                 }
             }

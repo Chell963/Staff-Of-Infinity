@@ -1,11 +1,11 @@
 using Abstractions;
-using MVVM.ViewModels;
+using MVVM.ViewModels.Entities;
 using UnityEngine;
 
 namespace Implementations.Controllers
 {
     public class EntityController : Controller
     {
-        [HideInInspector] public StaffViewModel player;
+        [HideInInspector] public PlayerViewModel player;
     }
 }

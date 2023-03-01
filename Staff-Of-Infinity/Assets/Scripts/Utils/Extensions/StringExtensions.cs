@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Utils.Extensions
 {
     public static class StringExtensions

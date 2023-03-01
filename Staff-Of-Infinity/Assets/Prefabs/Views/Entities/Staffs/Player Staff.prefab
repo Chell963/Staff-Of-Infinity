@@ -29,7 +29,39 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3234631030784292635}
+  - {fileID: 1596558721203451657}
   m_Father: {fileID: 4762897389173415209}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2093876034828570975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1596558721203451657}
+  m_Layer: 0
+  m_Name: Abilities
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1596558721203451657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093876034828570975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4846476858131990109}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3124190409654948999
@@ -87,7 +119,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4762897389173415209}
   - component: {fileID: 5178283644331778602}
-  - component: {fileID: 7337262988210844286}
   - component: {fileID: 6977843834390895746}
   - component: {fileID: 4977113245754123084}
   - component: {fileID: 2494696010581182272}
@@ -127,23 +158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04cf04b8f97e9b742bcc87876c889d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BasicModel>k__BackingField: {fileID: 11400000, guid: 863b8727ca36ef54dad02268c842056b, type: 2}
-  entityBody: {fileID: 6977843834390895746}
-  entityCollider: {fileID: 0}
-  gameplayInput: {fileID: 7337262988210844286}
+  <BasicModelReference>k__BackingField: {fileID: 11400000, guid: 863b8727ca36ef54dad02268c842056b, type: 2}
+  <EntityBody>k__BackingField: {fileID: 6977843834390895746}
+  <EntityCollider>k__BackingField: {fileID: 4977113245754123084}
+  abilitiesParent: {fileID: 2093876034828570975}
   staffSprite: {fileID: 2390371437896415950}
---- !u!114 &7337262988210844286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830285692653833456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67815586dadcc9848b8d2d73d8591a4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &6977843834390895746
 Rigidbody2D:
   serializedVersion: 4
@@ -155,7 +174,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  m_UseAutoMass: 1
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05

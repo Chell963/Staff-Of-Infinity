@@ -33,9 +33,7 @@ namespace Implementations.Controllers
         private readonly List<Screen>    _openedScreens    = new();
 
         private Screen       _lastOpenedScreen;
-
         private ScreenHolder _screenHolder;
-
         private List<Controller> _controllers;
 
         public void InjectControllers(params Controller[] controllersToInject)

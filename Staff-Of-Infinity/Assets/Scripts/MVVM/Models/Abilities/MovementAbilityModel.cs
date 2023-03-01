@@ -1,22 +1,27 @@
-using Abstractions;
 using Types;
 using UnityEngine;
 
-namespace MVVM.Models
+namespace MVVM.Models.Abilities
 {
-    public abstract class EntityModel : BasicModel
+    [CreateAssetMenu(fileName = "MovementAbilityModel", menuName = "Models/Abilities/MovementAbilityModel")]
+    public class MovementAbilityModel : AbilityModel
     {
-        [field: SerializeField] public int Health { get; private set; }
         [field: SerializeField] public float MaxSpeed { get; private set; }
         [field: SerializeField] public float Acceleration { get; private set; }
         
-        protected EntityMovementState MovementState;
-        protected EntityFightState FightState;
+        private EntityMovementState _movementState;
         
-        protected float Speed { get; private set; }
-        protected float Direction { get; private set; }
+        private float Speed { get; set; }
+        private float Direction { get; set; }
 
-        public float ChangeSpeed()
+        public override void ChangeAbilityState(int entityAbilityState, params object[] abilityParameters)
+        {
+            base.ChangeAbilityState(entityAbilityState, abilityParameters);
+            _movementState = (EntityMovementState)CurrentAbilityIntState;
+            Direction = (float)abilityParameters[0];
+        }
+
+        public override object ChangeAbilityValue()
         {
             var modelSpeed = MaxSpeed;
             var modelAcceleration = Acceleration;
@@ -34,17 +39,6 @@ namespace MVVM.Models
             };
             Speed = Speed > modelSpeed ? modelSpeed : Speed < -modelSpeed ? -modelSpeed : Speed;
             return Speed;
-        }
-        
-        public void ChangeMovementState(EntityMovementState entityMovementState, float direction = 0)
-        {
-            MovementState = entityMovementState;
-            Direction = direction;
-        }
-        
-        public void ChangeFightState(EntityFightState entityFightState)
-        {
-            FightState = entityFightState;
         }
     }
 }

@@ -1,4 +1,5 @@
 using MVVM.Views;
+using MVVM.Views.Entities;
 using UnityEngine;
 
 namespace Implementations.Holders
@@ -11,9 +12,9 @@ namespace Implementations.Holders
         private Vector3 _playerPosition = new Vector3(0, 0, -10);
 
         private LevelView _currentLevel;
-        private StaffView _currentPlayer;
+        private PlayerView _currentPlayer;
 
-        public void InitializeCamera(LevelView level, StaffView playerView)
+        public void InitializeCamera(LevelView level, PlayerView playerView)
         {
             _currentLevel = level;
             _currentPlayer = playerView;

@@ -3,6 +3,7 @@ using System.Linq;
 using Abstractions;
 using Implementations.Holders;
 using Interfaces;
+using MVVM.Models.Entities;
 using MVVM.ViewModels;
 using MVVM.Views;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Implementations.Controllers
     public class LevelController : Controller, IControllerContainer, IHolderContainer
     {
         [SerializeField] private List<LevelView> levels;
+        [SerializeField] private List<PlayerModel> playerModels;
         
         private List<Controller> _controllers;
         private List<Holder> _holders;
@@ -20,6 +22,7 @@ namespace Implementations.Controllers
         private GameplayCamera _gameplayCamera;
 
         private LevelViewModel _currentLevel;
+        private int _currentPlayerSetupIndex = 0;
 
         public void InjectControllers(params Controller[] controllersToInject)
         {
@@ -50,9 +53,23 @@ namespace Implementations.Controllers
             instantiatedView.Initialize();
             instantiatedModel.Initialize();
 
-            var localPlayer = localEntitiesController.player.StaffView;
+            var localPlayer = localEntitiesController.player.PlayerView;
             
             _gameplayCamera.InitializeCamera(instantiatedView, localPlayer);
         }
+
+        //TODO IMPLEMENT STAFF SWITCHING
+        /*public void OnSwitchPlayer(InputValue value)
+        {
+            var index = (int)value.Get<float>();
+            if(index == 0) return;
+            if(_currentLevel == null) return;
+            _currentPlayerIndex += index;
+            if (_currentPlayerIndex < 0)
+                _currentPlayerIndex = playerModels.Count - 1;
+            if (_currentPlayerIndex >= playerModels.Count)
+                _currentPlayerIndex = 0;
+            _currentLevel.LevelView.InitializePlayer(playerModels[_currentPlayerIndex]);
+        }*/
     }
 }
